@@ -1,0 +1,258 @@
+a) Faça um programa que recebe duas notas, exibe a média aritmética das notas e uma mensagem indicando se o aluno foi aprovado ou reprovado. A média para aprovação deve ser maior que seis.
+
+import java.util.Scanner;
+
+public class ex1 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Informe a primeira nota:");
+        double nota1 = scanner.nextDouble();
+        System.out.println("Informe a segunda nota:");
+        double nota2 = scanner.nextDouble();
+        double media = (nota1 + nota2) / 2;
+        System.out.println("Media: " + media);
+        if (media >= 6) {
+            System.out.println("Aprovado");
+        } else {
+            System.out.println("Reprovado");
+        }
+        
+    }
+}
+
+
+b) Tendo como entrada a altura e o sexo de uma pessoa, construa um programa que exibe o peso ideal para ela, em quilos. Use as seguintes fórmulas (adote ℎ como a altura e em metros):
+• Homens: 72,7 × ℎ − 58
+• Mulheres: 62,1 × ℎ − 44,7
+
+import java.util.Scanner;
+
+public class ex2 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Informe a altura (em metros):");
+        double altura = scanner.nextDouble();
+        System.out.println("Informe o sexo (M para masculino, F para feminino):");
+        char sexo = scanner.next().charAt(0);
+        double pesoIdeal;
+        if (sexo == 'M') {
+            pesoIdeal = 72.7 * altura - 58;
+        } else {
+            pesoIdeal = 62.1 * altura - 44.7;
+        }
+        System.out.println("Peso ideal: " + pesoIdeal + " kg");
+        
+    } 
+}
+
+
+c) Faça um programa que recebe dois números inteiros distintos e exibe o maior.
+
+import java.util.Scanner;
+
+public class ex3 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe o primeiro numero inteiro:");
+        int num1 = scanner.nextInt();
+        System.out.println("Informe o segundo numero inteiro:");
+        int num2 = scanner.nextInt();
+        if (num1 > num2) {
+            System.out.println("Maior numero: " + num1);
+        } else {
+            System.out.println("Maior numero: " + num2);
+        }
+    }
+}
+
+
+d) Faça um programa que recebe dois números reais e exibe o menor deles e com duas casas decimais.
+
+import java.util.Scanner;
+
+public class ex4 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe o primeiro numero real:");
+        double real1 = scanner.nextDouble();
+        System.out.println("Informe o segundo numero real:");
+        double real2 = scanner.nextDouble();
+        double menor = Math.min(real1, real2);
+        System.out.printf("Menor numero: %.2f\n", menor);
+    }
+}
+
+
+e) Faça um programa que recebe um número inteiro e exibe uma mensagem indicando se ele é par ou ímpar (use o operador % para obter o resto de uma divisão inteira).
+
+import java.util.Scanner;
+
+public class ex5 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    
+     System.out.println("Informe um numero inteiro:");
+        int numero = scanner.nextInt();
+        if (numero % 2 == 0) {
+            System.out.println("Numero par");
+        } else {
+            System.out.println("Numero ímpar");
+        }
+    
+    }
+}
+
+
+f) Faça um programa que recebe três números reais e os exibe em ordem crescente.
+
+import java.util.Scanner;
+
+public class ex6 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Informe tres numeros reais:");
+        double numReal1 = scanner.nextDouble();
+        double numReal2 = scanner.nextDouble();
+        double numReal3 = scanner.nextDouble();
+        double[] numeros = {numReal1, numReal2, numReal3};
+        java.util.Arrays.sort(numeros);
+        System.out.println("Numeros em ordem crescente:");
+        for (double num : numeros) {
+            System.out.println(num);
+        }
+    
+    }
+}
+
+
+g) Faça um programa que mostre um menu com as opções "adição", "subtração", "multiplicação" e "divisão", recebe dois valores reais, a operação escolhida pelo usuário e exibe o resultado da operação sobre os valores.
+
+import java.util.Scanner;
+
+public class ex7 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe dois valores reais:");
+        double valor1 = scanner.nextDouble();
+        double valor2 = scanner.nextDouble();
+        System.out.println("Escolha a operacao (adicao, subtracao, multiplicacao ou divisao):");
+        scanner.nextLine(); 
+        String operacao = scanner.nextLine();
+        double resultado = 0;
+        switch (operacao.toLowerCase()) {
+            case "adicao":
+                resultado = valor1 + valor2;
+                break;
+            case "subtracao":
+                resultado = valor1 - valor2;
+                break;
+            case "multiplicacao":
+                resultado = valor1 * valor2;
+                break;
+            case "divisao":
+                resultado = valor1 / valor2;
+                break;
+            default:
+                System.out.println("Operacao invalida!");
+        }
+        System.out.println("Resultado: " + resultado);
+    
+    }
+}
+
+
+h) Desenvolva um programa que recebe a base e a altura de três triângulos e exibe a maior área. Lembre-se da fórmula: 𝐴 = 𝑏𝑎𝑠𝑒 ×𝑎𝑙𝑡𝑢𝑟𝑎 / 2
+
+import java.util.Scanner;
+
+public class ex8 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe a base e a altura de tres triangulos:");
+        double maiorArea = 0;
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Triangulo " + (i + 1) + ":");
+            double base = scanner.nextDouble();
+            double alturaTriangulo = scanner.nextDouble();
+            double area = (base * alturaTriangulo) / 2;
+            if (area > maiorArea) {
+                maiorArea = area;
+            }
+        }
+        System.out.println("Maior area: " + maiorArea);
+    }
+}
+
+
+i) Faça um programa que recebe o valor de três arestas e exibe uma mensagem indicando se podem formar um triângulo. Em caso afirmativo, indique se ele é equilátero, isósceles ou escaleno. Lembre-se: Para que um triângulo exista, a medida de qualquer um dos lados deve ser menor que a soma das medidas dos outros dois.
+
+import java.util.Scanner;
+
+public class ex9 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe as medidas das tres arestas do triangulo:");
+        double aresta1 = scanner.nextDouble();
+        double aresta2 = scanner.nextDouble();
+        double aresta3 = scanner.nextDouble();
+        if (aresta1 < aresta2 + aresta3 && aresta2 < aresta1 + aresta3 && aresta3 < aresta1 + aresta2) {
+            if (aresta1 == aresta2 && aresta2 == aresta3) {
+                System.out.println("Triangulo equilatero");
+            } else if (aresta1 == aresta2 || aresta1 == aresta3 || aresta2 == aresta3) {
+                System.out.println("Triangulo isosceles");
+            } else {
+                System.out.println("Triangulo escaleno");
+            }
+        } else {
+            System.out.println("Nao é possível formar um triangulo com essas medidas");
+        }
+    
+    }
+}
+
+
+j) Faça um programa que recebe os coeficientes 𝑎, 𝑏 𝑒 𝑐 (𝑎 ≠ 0) de uma equação de segundo grau e exibe os valores das raízes, se forem reais, ou a mensagem "nao existem raizes reais", caso contrário.
+
+import java.util.Scanner;
+
+public class ex10 {
+    
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); 
+    
+    System.out.println("Informe os coeficientes a, b e c da equacao ax^2 + bx + c:");
+        double coefA = scanner.nextDouble();
+        double coefB = scanner.nextDouble();
+        double coefC = scanner.nextDouble();
+        double delta = coefB * coefB - 4 * coefA * coefC;
+        if (delta > 0) {
+            double raiz1 = (-coefB + Math.sqrt(delta)) / (2 * coefA);
+            double raiz2 = (-coefB - Math.sqrt(delta)) / (2 * coefA);
+            System.out.println("Raizes reais: " + raiz1 + " e " + raiz2);
+        } else if (delta == 0) {
+            double raiz = -coefB / (2 * coefA);
+            System.out.println("Raiz real: " + raiz);
+        } else {
+            System.out.println("Nao existem raizes reais");
+        }
+    }
+}
+    
