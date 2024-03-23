@@ -1,0 +1,203 @@
+Exercício 1
+
+package javaapplication1;
+
+/* Faça um programa que recebe três números reais e exibe a multiplicação desses números.*/
+
+import java.util.Scanner;
+
+public class ex1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       
+        System.out.println("Primeiro número: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.println("Segundo número: ");
+        double num2 = scanner.nextDouble();
+        
+        System.out.println("Terceiro número: ");
+        double num3 = scanner.nextDouble();
+        
+        double resultado = num1 * num2 * num3;
+        System.out.println("Resultado: " + resultado);
+        
+        scanner.close();
+    }
+}
+
+
+Exercício 2
+
+package javaapplication1;
+
+/*Faça um programa que recebe as notas A11, A2 e A3 e exibe a média considerando que as notas são lançadas de 0 a 10 e a nota A1 tem peso 3, a nota A2 tem peso 3 e a nota A3 tem peso 4
+ */
+import java.util.Scanner;
+
+public class ex2 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Nota A1: ");
+        double a1 = scanner.nextDouble();
+        
+        System.out.println("Nota A2: ");
+        double a2 = scanner.nextDouble();
+        
+        System.out.println("Nota A3: ");
+        double a3 = scanner.nextDouble();
+        
+        double media = (a1 * 3 + a2 * 3 + a3 * 4) / 10;
+        System.out.println("A média é: " + media);
+        
+        scanner.close();
+    }
+}
+
+
+
+Exercício 3
+
+package javaapplication1;
+
+/*Faça um programa que lê o salário atual de alguém e exibe o novo salário que é o atual com 25%de aumento.
+ */
+
+import java.util.Scanner;
+
+public class ex3 {
+    
+     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite seu salário atual: ");
+        double salarioAtual = scanner.nextDouble();
+        double aumento = salarioAtual * 0.25;
+        double novoSalario = salarioAtual + aumento;
+        
+        System.out.println("Salário novo: " + novoSalario);
+        
+        scanner.close();
+     }
+}
+   
+
+
+Exercício 4
+
+package javaapplication1;
+
+/* Faça um programa que lê o salário base de alguém e exibe o novo salário, considerando 5% de gratificação(mais dinheiro) e 7% de impostos(menos dinheiro)sobre o salário base. Também exiba a gratificação e o imposto.*/
+
+import java.util.Scanner;
+
+public class ex4 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Salário base: ");
+        double salarioBase = scanner.nextDouble();
+        
+        double gratificacao = salarioBase * 0.05;
+        
+        double imposto = salarioBase * 0.07;
+
+        double novoSalario = salarioBase + gratificacao - imposto;
+        
+        System.out.println("Salário novo:  " + novoSalario);
+        System.out.println("Gratificação: - " + gratificacao);
+        System.out.println("Imposto: - " + imposto);
+        
+        scanner.close();
+    }
+    
+}
+
+
+
+Exercício 5
+
+package javaapplication1;
+
+/* Faça um programa que exibe a área de um retângulo a partir da base e da altura fornecidas pelo usuário.*/
+
+import java.util.Scanner;
+
+public class ex5 {
+    
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Base do retângulo: ");
+            double base = scanner.nextDouble();
+            
+            System.out.println("Altura do retângulo: ");
+            double altura = scanner.nextDouble();
+            
+            double area = base * altura;
+            
+            System.out.println("Área: " + area);
+        }
+    }
+}
+
+
+
+Exercício 6
+
+package javaapplication1;
+
+/* Faça um programa que exibe a área de um círculo a partir do perímetro fornecido pelo usuário. */
+
+import java.util.Scanner;
+
+public class ex6 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Qual o perímetro do círculo: ");
+        double perimetro = scanner.nextDouble();
+        
+        double pi = Math.PI;
+        
+        double raio = perimetro / (2 * pi);
+        
+        double area = pi * raio * raio;
+        
+        System.out.println("A área do círculo é: " + area);
+        
+        scanner.close();
+    }
+}
+
+
+
+Exercício 7
+
+package javaapplication1;
+
+/* Faça  um  programa  que exibe  quantos  litros  de  combustível  são  gastos  por  um  carro  em  um dado percurso. Serão fornecidos pelo usuário a distância percorrida(em km)e a quantidade de litros gastos por km.*/
+
+import java.util.Scanner;
+
+public class ex7 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite a distância em km: ");
+        double distancia = scanner.nextDouble();
+        
+        System.out.println("Quantos litros são gastos por km? ");
+        double litrosPorKm = scanner.nextDouble();
+        
+        double litrosGastos = distancia * litrosPorKm;
+        
+        System.out.println("O total de litros gastos é: " + litrosGastos);
+        
+        scanner.close();
+    }
+}
