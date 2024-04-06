@@ -1,0 +1,133 @@
+/*  Elabore um programa que lê um número inteiro n, seguido de n inteiros, e exibe a média dos n números lidos. */
+package exercicios0604;
+
+import java.util.Scanner;
+
+public class ex1 {
+    
+      public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a quantidade de numeros a serem lidos: ");
+        int n = scanner.nextInt();
+
+        int soma = 0;
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite um nemero: ");
+            int num = scanner.nextInt();
+            soma += num;
+        }
+
+        double media = (double) soma / n;
+        System.out.println("A media dos numeros é: " + media);
+
+        scanner.close();
+    }
+}
+
+
+/* [while] Elabore um programa que recebe valores naturais até que seja digitado o valor zero. O programa deverá exibir a média aritmética. Lembre-se: o valor zero apenas sinaliza o fim da entrada, não deve ser contabilizado. */
+
+package exercicios0604;
+
+import java.util.Scanner;
+
+public class ex2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int soma = 0;
+        int contador = 0;
+
+        System.out.print("Digite um numero natural (0 para sair): ");
+        int num = scanner.nextInt();
+
+        while (num != 0) {
+            soma += num;
+            contador++;
+            System.out.print("Digite um número natural (0 para sair): ");
+            num = scanner.nextInt();
+        }
+
+        if (contador != 0) {
+            double media = (double) soma / contador;
+            System.out.println("A media dos nemeros e: " + media);
+        } else {
+            System.out.println("Nenhum numero foi inserido.");
+        }
+
+        scanner.close();
+    }
+    
+}
+
+
+/*Elabore um programa que exibe qual o número natural que mais se aproxima da raiz quadrada de um número natural fornecido pelo usuário sem ultrapassá-lo. Use apenas as operações básicas (adição, subtração, multiplicação e divisão). Exemplo: O número natural que mais se aproxima de √48, sem ultrapassar, é 6.*/
+
+package exercicios0604;
+
+import java.util.Scanner;
+
+public class ex3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um numero natural: ");
+        int n = scanner.nextInt();
+
+        int raizQuadrada = 0;
+        while (raizQuadrada * raizQuadrada <= n) {
+            raizQuadrada++;
+        }
+
+        int numeroAproximado = raizQuadrada - 1;
+        System.out.println("O numero natural que mais se aproxima da raiz quadrada de " + n + " e: " + numeroAproximado);
+
+        scanner.close();
+    }
+}
+
+
+/*Crie um programa que exibe uma lista de graus Fahrenheit (𝐹) e os correspondentes em graus centígrados (𝐶),
+variando de 50 a 150, com passos de uma unidade. A fórmula de conversão é 𝐶 = 5 ÷ 9 × (𝐹 − 32).*/
+
+package exercicios0604;
+
+import java.util.Scanner;
+
+public class ex4 {
+    public static void main(String[] args) {
+        System.out.println("Fahrenheit\tCelsius");
+        for (int f = 50; f <= 150; f++) {
+            double c = (5.0 / 9) * (f - 32);
+            System.out.printf("%d\t\t%.2f\n", f, c);
+        }
+    }   
+}
+
+
+/*[for] Desenvolva um programa que exibe a tabuada de um número natural escolhido pelo usuário. Os múltiplos apresentados devem ser de 1 a 10.
+f) Faça um programa que lê as temperaturas máximas de cada um dos 365 dias do ano e exibe a temperatura média anual.*/
+
+package exercicios0604;
+
+import java.util.Scanner;
+
+public class ex5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um numero natural para exibir sua tabuada: ");
+        int numero = scanner.nextInt();
+
+        System.out.println("Tabuada de " + numero);
+        for (int i = 1; i <= 10; i++) {
+            int resultado = numero * i;
+            System.out.println(numero + " x " + i + " = " + resultado);
+        }
+
+        scanner.close();
+    }
+}
+
+
